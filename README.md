@@ -2,6 +2,7 @@
 - This is the course project for Duke University's Compsci 531D Fall21.
 
 For part 1:
+
 Description:
 - cost, path = dtw(T1, T2) takes in two trajectories T1 (nx2) and T2 (mx2) which are two sets of points that define polygonal curves,
   each row represents one point in R^2. See project 1 descriptions for more details to the definition of cost and path for dynamic time warping.
