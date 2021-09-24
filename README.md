@@ -26,3 +26,17 @@ Data structure:
 - To change the data structure, for example, you want T1 in the shape of (2,n), simply use .T when you pass it into the function.
 - If you need a different shape of the path/ want it as a list/ want it in a reverse order, you can call reshape, tolist, argsort.
 - Feel free to change the code implementation, I'm totally fine with it!
+
+For part 2:
+
+Description:
+- read_trajectories(path) takes string as the path of the csv file and return a ndarray with corresponding shape to store the data.
+
+- center_trajectories(traj_list: list, distance_func) takes list/ndarray as the list contains trajectories and a distance function, return the center trajectory from the list     of trajectories. Shapes and details can be found in the comments
+
+- n_average_trajectories(traj_list: list, h:int) takes list/ndarray as the list contains trajectories and an int as the average degree, return the averaged trajectory from the   list of trajectories. Shapes and details can be found in the comments
+
+Usage:
+- PartTwo.py includes just all the three functions
+
+- PartTwoDemo.py/PartTwoDemoNotebook.ipynb includes all the three functions and some of my demo/test codes to display and verify. It can be used as an illustration on how these   functions work. Recommend open PartTwoDemoNotebook.ipynb on google colab if what to test out.
