@@ -1,5 +1,5 @@
-from PartOne import *
-from PartTwo import *
+from Part1 import *
+from tools import *
 import numpy as np
 import pandas
 import matplotlib.pyplot as plt
@@ -22,5 +22,10 @@ print('data for id=5:\n{:}\n'.format(T_7))
 
 # get the cost and assignment for the first pair
 distance_dtw_pair_1, path_dtw_pair_1 = dtw(T_5[:,1:3], T_7[:,1:3])
-print('The dynamic time warping cost is: {:}'.format(distance_dtw_pair_1))
-print('The associated monotone assignment C is:\n{:}'.format(path_dtw_pair_1))
+print('The dynamic time warping (DTW) cost is: {:}'.format(distance_dtw_pair_1))
+print('The associated monotone assignment C is:\n{:}\n'.format(path_dtw_pair_1))
+
+# get the cost and assignment for the first pair
+distance_dtw_pair_1, path_dtw_pair_1 = dfd(T_5[:,1:3], T_7[:,1:3])
+print('The  discrete Fréchet distance (DFD) cost is: {:}'.format(distance_dtw_pair_1))
+print('The associated monotone assignment C is:\n{:}\n'.format(path_dtw_pair_1))

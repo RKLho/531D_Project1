@@ -25,9 +25,9 @@ def read_trajectories(path: str) -> 'ndarry':
   Data_temp = pandas.read_csv(path)
   return np.array(Data_temp)
 
-Data_Highway1 = pandas.read_csv("/content/highway.csv")
+Data_Highway1 = pandas.read_csv("../data/highway.csv")
 
-Data_Highway = read_trajectories("/content/highway.csv")
+Data_Highway = read_trajectories("../data/highway..csv")
 
 Data_Highway1
 
@@ -35,7 +35,7 @@ def center_trajectories(traj_list: list, distance_func) -> "trajectories":
   """Input:
      traj_list -> ndarray of trajectories with shape(m, n, 4)
      m is the number of trajectories in this ndarray
-     trajectories are represented by ndarray of shape (n, 4) where n represents 
+     trajectories are represented by ndarray of shape (n, 4) where n represents
      the number of points and 4 represents id, x, y, lane coordinates
 
      Output:
@@ -50,7 +50,7 @@ def center_trajectories(traj_list: list, distance_func) -> "trajectories":
   for i in range(traj_list_size):
     for j in range(traj_list_size):
       distances[i] += distance_func(traj_list[i], traj_list[j])[0]
-  
+
   return traj_list[np.argmin(distances)], np.argmin()
 
 mask1 = Data_Highway[:, 3] == 1
@@ -78,9 +78,9 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
   """Input:
      traj_list -> ndarray of trajectories with shape(m, n, 4)
      m is the number of trajectories in this ndarray
-     trajectories are represented by ndarray of shape (n, 4) where n represents 
+     trajectories are represented by ndarray of shape (n, 4) where n represents
      the number of points and 4 represents id, x, y, lane coordinates
-    
+
      h -> the number of points representing the n average trajectories
 
      Output:
@@ -93,7 +93,7 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
 
   h_average_traj = np.zeros((h, 2))
 
-  for i in range(h):   
+  for i in range(h):
     curr_x_added = 0
     curr_y_added = 0
     for j in range(traj_list_size):
@@ -111,7 +111,7 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
 
           curr_remaining_arc_length += line_seg_arc_length
           proportion = curr_remaining_arc_length / line_seg_arc_length
-          #find the equation          
+          #find the equation
           coefficients = np.polyfit(traj_list[j][p:p+2, 1:3].T[0], traj_list[j][p:p+2, 1:3].T[1], 1)
           polynomial = np.poly1d(coefficients)
           #get the y value
@@ -123,12 +123,12 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
           curr_x_added += curr_x
           print(curr_x_added)
           break
-    
+
     curr_y_added = curr_y_added / traj_list_size
     curr_x_added = curr_x_added / traj_list_size
     h_average_traj[i][0] = curr_x_added
     h_average_traj[i][1] = curr_y_added
-  
+
   return h_average_traj
 
 def get_arc_length(trajectory) -> int:
