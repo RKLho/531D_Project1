@@ -32,7 +32,7 @@ def draw_assignment(T1, T2, path_assignment, title, save_path):
     plt.show()
 
     return
-    
+
 def read_trajectories(path: str) -> 'ndarry':
     """Input:
         path -> string of the csv file path
