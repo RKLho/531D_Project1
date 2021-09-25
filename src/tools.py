@@ -14,12 +14,11 @@ def read_trajectories(path: str) -> 'ndarry':
 
 def reconstruct(Data):
     """Input:
-     Data -> array of unstructed trajectories [[id, x, y]...]
+        Data -> array of unstructed trajectories [[id1, x1, y1]...]
 
-     Output:
-     array of trajectories [T1, T2, ...]
-
+        Output:
+        array of trajectories [[[x1, y1], [x2, y2]]..]
     """
     n = np.unique(Data[:,0])
-    x=[Data[Data[:,0]==i,1:3].tolist() for i in n]
+    x=[Data[Data[:,0]==i,1:3] for i in n]
     return x
