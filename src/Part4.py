@@ -22,8 +22,8 @@ def paa(T, c):
     for idx in range(rg):
         ans.append(np.average(T[idx*c:(idx+1)*c], axis=0))
     if rem>0:
-        ans.append(np.average(T[rg*c:rg*c+rem]))
-    return ans
+        ans.append(np.average(T[rg*c:rg*c+rem], axis=0))
+    return np.array(ans)
 
 def pdtw(T1, T2, c):
     """

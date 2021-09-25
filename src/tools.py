@@ -22,7 +22,7 @@ def draw_assignment(T1, T2, path_assignment, title, save_path):
     for i in range(len(path_assignment)):
         T1_node = path_assignment[i][0]
         T2_node = path_assignment[i][1]
-        print(T1_node, T2_node)
+        # print(T1_node, T2_node)
         plt.plot([T1[T1_node][0], T2[T2_node][0]], [T1[T1_node][1], T2[T2_node][1]], 'k--', linewidth=0.5)
 
     plt.xlabel('x')
@@ -54,5 +54,8 @@ def reconstruct(Data):
 
     """
     n = np.unique(Data[:,0])
-    x=[Data[Data[:,0]==i,1:3].tolist() for i in n]
-    return x
+    list = []
+    for i in n:
+        list.append(Data[Data[:,0]==i, 1:3])
+    list = np.array(list, dtype=object)
+    return list
