@@ -107,19 +107,19 @@ def findDfdPath(my_matrix):
 # In[3]:
 
 
-x = np.array([[1,1], [2,2], [3,3], [4,4], [5,5]])
-y = np.array([[2,2], [3,3], [4,4]])
-my_distance_dtw, my_path_dtw = dtw(x, y)
-print(my_distance_dtw)
-print(my_path_dtw)
+# x = np.array([[1,1], [2,2], [3,3], [4,4], [5,5]])
+# y = np.array([[2,2], [3,3], [4,4]])
+# my_distance_dtw, my_path_dtw = dtw(x, y)
+# print(my_distance_dtw)
+# print(my_path_dtw)
 
 
 # In[4]:
 
 
-my_distance_dfd, my_path_dfd = dfd(x, y)
-print(my_distance_dfd)
-print(my_path_dfd)
+# my_distance_dfd, my_path_dfd = dfd(x, y)
+# print(my_distance_dfd)
+# print(my_path_dfd)
 
 
 # In[ ]:
