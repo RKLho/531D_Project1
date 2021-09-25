@@ -27,7 +27,7 @@ def read_trajectories(path: str) -> 'ndarry':
 
 Data_Highway1 = pandas.read_csv("../data/highway.csv")
 
-Data_Highway = read_trajectories("../data/highway..csv")
+Data_Highway = read_trajectories("../data/highway.csv")
 
 Data_Highway1
 

@@ -37,7 +37,7 @@ def dtw(T1, T2):
             else:
                 my_matrix[i][j] = cost + my_matrix[i-1][j-1]
     warp_path = findPath(my_matrix)
-
+    # warp_path = traceback(my_matrix)
     return my_matrix[n][m], warp_path
 
 def findPath(my_matrix):
@@ -69,6 +69,21 @@ def findPath(my_matrix):
 
     return path-1
 
+def traceback(D):
+    i, j = np.array(D.shape) - 2
+    p, q = [i], [j]
+    while (i > 0) or (j > 0):
+        tb = np.argmin((D[i, j], D[i, j + 1], D[i + 1, j]))
+        if tb == 0:
+            i -= 1
+            j -= 1
+        elif tb == 1:
+            i -= 1
+        else:  # (tb == 2):
+            j -= 1
+        p.insert(0, i)
+        q.insert(0, j)
+    return np.array(p), np.array(q)
 
 def dfd(T1, T2):
     n = len(T1)
