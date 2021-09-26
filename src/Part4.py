@@ -39,5 +39,52 @@ def pdtw(T1, T2, c):
     
     return dist_matrix, warp_path
 
-def LCSS(T1, T2):
-    pass
+def getDelta(m, n):
+    return 0.5 * min(m, n)
+    
+def getEpsilon(T1:list):
+    epsilonX = 0.1 * (np.max(T1[:,0]) - np.min(T1[:,0]))
+    epsilonY = 0.1 * (np.max(T1[:,1]) - np.min(T1[:,1]))
+    return epsilonX, epsilonY
+    
+def lcssDist(T1: list, T2: list) -> int:
+    
+    m = len(T1)
+    n = len(T2)
+    # delta = getDelta(m, n)
+    avgYDiff = abs(np.average(T1[:,1]) - np.average(T2[:,1]))
+    avgXDiff = abs(np.average(T1[:,0]) - np.average(T2[:,0]))
+    epsilonX, epsilonY = getEpsilon(T1)
+    matrix = [[0] * (n + 1) for _ in range(m + 1)]
+    for col in range(len(T2)):
+        for row in range(len(T1)):
+            # print(abs(abs(T1[row][0] - T2[col][0])), epsilonX, abs(abs(T1[row][1] - T2[col][1]) - avgYDiff), epsilonY)
+            if abs(abs(T1[row][0] - T2[col][0]) - avgXDiff) < epsilonX \
+            and abs(abs(T1[row][1] - T2[col][1]) - avgYDiff) < epsilonY:
+                matrix[row+1][col+1] = 1 + matrix[row][col]
+            else:
+                matrix[row+1][col+1] = max(matrix[row + 1][col], matrix[row][col + 1])
+    # print(np.array(matrix))
+    path = findPath(np.array(matrix))
+    return matrix[m][n], path
+
+def findPath(my_matrix):
+    m, n = my_matrix.shape
+    i = m - 1
+    j = n - 1
+    path = []
+
+    while i >= 1 and j >= 1:
+        index_min = np.argmax([my_matrix[i-1][j-1],my_matrix[i-1][j],my_matrix[i][j-1]])
+        if index_min == 0:
+            if(my_matrix[i-1][j-1]<my_matrix[i][j]):
+                path.append([i-1, j-1])
+            j = j-1
+            i = i-1
+        elif index_min == 1:
+            i = i-1
+        else:
+            j = j-1
+
+    return np.array(path)
+
