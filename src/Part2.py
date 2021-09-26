@@ -41,9 +41,9 @@ def center_trajectories(traj_list: list, distance_func) -> "trajectories":
 
   for i in range(traj_list_size):
     for j in range(traj_list_size):
-      distances[i] += distance_func(traj_list[i], traj_list[j])[0]
+      distances[i] += distance_func(traj_list[i][:, 1:3], traj_list[j][:, 1:3])[0]
   
-  return traj_list[np.argmin(distances)], np.argmin()
+  return traj_list[np.argmin(distances)]
 
 def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
   """Input:
