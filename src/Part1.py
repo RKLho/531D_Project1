@@ -20,11 +20,8 @@ def dtw(T1, T2):
     n = len(T1)
     m = len(T2)
     # use dynamic programming
-    my_matrix = np.zeros((n+1, m+1))
+    my_matrix = np.ones((n+1, m+1))*np.inf
 
-    for i in range(n+1):
-        for j in range(m+1):
-            my_matrix[i, j] = np.inf
     my_matrix[0][0] = 0
     for i in range(1, n+1):
         for j in range(1, m+1):
