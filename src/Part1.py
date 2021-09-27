@@ -26,13 +26,7 @@ def dtw(T1, T2):
     for i in range(1, n+1):
         for j in range(1, m+1):
             cost = euclidean_square(T1[i-1,:], T2[j-1,:])
-            index_min = np.argmin([my_matrix[i-1][j-1], my_matrix[i-1][j], my_matrix[i][j-1]])
-            if index_min == 0:
-                my_matrix[i][j] = cost + my_matrix[i-1][j-1]
-            elif index_min == 1:
-                my_matrix[i][j] = cost + my_matrix[i-1][j]
-            else:
-                my_matrix[i][j] = cost + my_matrix[i][j-1]
+            my_matrix[i][j] = cost + min([my_matrix[i-1][j-1], my_matrix[i-1][j], my_matrix[i][j-1]])
     warp_path = findPath(my_matrix)
 
     return my_matrix[n][m], warp_path
