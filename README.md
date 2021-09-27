@@ -1,7 +1,7 @@
-## Trajectory Data Analysis
+# Trajectory Data Analysis
 - This is the course project for Duke University's Compsci 531D Fall21.
 
-For part 1:
+### Part 1:
 
 Description:
 - cost, path = dtw(T1, T2) takes in two trajectories T1 (nx2) and T2 (mx2) which are two sets of points that define polygonal curves,
@@ -27,7 +27,7 @@ Data structure:
 - If you need a different shape of the path/ want it as a list/ want it in a reverse order, you can call reshape, tolist, argsort.
 - Feel free to change the code implementation, I'm totally fine with it!
 
-For part 2:
+### Part 2:
 
 Description:
 - read_trajectories(path) takes string as the path of the csv file and return a ndarray with corresponding shape to store the data.
@@ -40,3 +40,11 @@ Usage:
 - PartTwo.py includes just all the three functions
 
 - PartTwoDemo.py/PartTwoDemoNotebook.ipynb includes all the three functions and some of my demo/test codes to display and verify. It can be used as an illustration on how these   functions work. Recommend open PartTwoDemoNotebook.ipynb on google colab if what to test out.
+
+
+### Part 4
+
+Description:
+- paa(T, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point. 
+
+- pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function. 

@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/17EhHg_x3UiGyvw3arAmwm-2nJcwwLQ8T
 """
 
-from PartOne import *
+from Part1 import *
 import numpy as np
 import pandas
 import matplotlib.pyplot as plt
@@ -49,9 +49,9 @@ def center_trajectories(traj_list: list, distance_func) -> "trajectories":
 
   for i in range(traj_list_size):
     for j in range(traj_list_size):
-      distances[i] += distance_func(traj_list[i], traj_list[j])[0]
+      distances[i] += distance_func(traj_list[i][:, 1:3], traj_list[j][:, 1:3])[0]
 
-  return traj_list[np.argmin(distances)], np.argmin()
+  return traj_list[np.argmin(distances)]
 
 mask1 = Data_Highway[:, 3] == 1
 test1 = Data_Highway[mask1,:]

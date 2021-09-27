@@ -54,5 +54,8 @@ def reconstruct(Data):
 
     """
     n = np.unique(Data[:,0])
-    x=[Data[Data[:,0]==i,1:3].tolist() for i in n]
-    return x
+    list = []
+    for i in n:
+        list.append(Data[Data[:,0]==i, 1:3])
+    list = np.array(list, dtype=object)
+    return list
