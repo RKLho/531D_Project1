@@ -72,12 +72,12 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
       curr_x = (i+1) / h
       curr_remaining_arc_length = curr_x * arc_length
       #curr_remaining_arc_length = curr_x
-      print("arc_lenth", curr_x, curr_remaining_arc_length)
+      #print("arc_lenth", curr_x, curr_remaining_arc_length)
       for p in range(len(traj_list[j]) - 1):
         #(traj_list[j][p][1] <= curr_x * ).all() and (traj_list[j][p+1][1] >= curr_x).all()
         line_seg_arc_length = np.sqrt(euclidean_square(traj_list[j][p][1:3], traj_list[j][p+1][1:3]))
         curr_remaining_arc_length -= line_seg_arc_length
-        print("curr_remain", p, curr_remaining_arc_length)
+        #print("curr_remain", p, curr_remaining_arc_length)
         if curr_remaining_arc_length <= 1e-4 :
 
           curr_remaining_arc_length += line_seg_arc_length
@@ -92,7 +92,7 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
           curr_x = np.minimum(x1, x2) + x_length*proportion
           curr_y_added += polynomial(curr_x)
           curr_x_added += curr_x
-          print(curr_x_added)
+          #print(curr_x_added)
           break
     
     curr_y_added = curr_y_added / traj_list_size
