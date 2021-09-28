@@ -20,9 +20,7 @@ Description:
   [4 2] means the 4th point in T1 connects to 2nd in T2, etc.
 
 Usage:
-<<<<<<< HEAD
 - from Part1 import * (then you can use dtw and dfd in Part1.py)
->>>>>>> b4cb8f91adc6f26a0823fbc975a8fb1848f93bf1
 
 Data structure:
 - To change the data structure, for example, you want T1 in the shape of (2,n), simply use .T when you pass it into the function.
@@ -47,7 +45,6 @@ Usage:
 ### Part 4:
 
 Description:
-<<<<<<< HEAD
 - paa(T, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point.
 
 - pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
@@ -61,5 +58,3 @@ Description:
 Usage:
 - from Part4 import * (then you can use paa, pdtw and lcssDist in Part4.py)
 - The specific usage example including the visualization method are described and executed in Part4Demo.py
-
->>>>>>> b4cb8f91adc6f26a0823fbc975a8fb1848f93bf1
