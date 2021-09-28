@@ -27,6 +27,7 @@ Description:
 
 Usage:
 - from Part1 import * (then you can use dtw and dfd in Part1.py)
+- Run 'python Part1Demo.py' for slides results
 
 Data structure:
 - To change the data structure, for example, you want T1 in the shape of (2,n), simply use .T when you pass it into the function.
