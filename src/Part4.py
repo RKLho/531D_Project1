@@ -66,7 +66,8 @@ def lcssDist(T1: list, T2: list) -> int:
                 matrix[row+1][col+1] = max(matrix[row + 1][col], matrix[row][col + 1])
     # print(np.array(matrix))
     path = findPath(np.array(matrix))
-    return matrix[m][n], path
+    dist = 1-(matrix[m][n]/(m+n-matrix[m][n]))
+    return dist, path
 
 def findPath(my_matrix):
     m, n = my_matrix.shape
