@@ -20,12 +20,11 @@ Description:
   [4 2] means the 4th point in T1 connects to 2nd in T2, etc.
 
 Usage:
-- from 3.1.3_Assignment import * (then you can use dtw and dfd in 3.1.3_Assignment.py)
+- from Part1 import * (then you can use dtw and dfd in 3.1.3_Assignment.py)
 
 Data structure:
 - To change the data structure, for example, you want T1 in the shape of (2,n), simply use .T when you pass it into the function.
 - If you need a different shape of the path/ want it as a list/ want it in a reverse order, you can call reshape, tolist, argsort.
-- Feel free to change the code implementation, I'm totally fine with it!
 
 ### Part 2:
 
@@ -45,6 +44,6 @@ Usage:
 ### Part 4
 
 Description:
-- paa(T, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point. 
+- paa(T, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point.
 
-- pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function. 
+- pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
