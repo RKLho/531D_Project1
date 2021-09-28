@@ -1,6 +1,12 @@
 # Trajectory Data Analysis
 - This is the course project for Duke University's Compsci 531D Fall21.
 
+### Required Packages:
+- numpy
+- pandas
+- matplotlib.pyplot
+- sklearn.preprocessing
+
 ### Part 1:
 
 Description:
