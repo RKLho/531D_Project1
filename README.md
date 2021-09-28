@@ -21,8 +21,6 @@ Description:
 
 Usage:
 <<<<<<< HEAD
-- from Part1 import * (then you can use dtw and dfd in 3.1.3_Assignment.py)
-=======
 - from Part1 import * (then you can use dtw and dfd in Part1.py)
 >>>>>>> b4cb8f91adc6f26a0823fbc975a8fb1848f93bf1
 
@@ -54,11 +52,11 @@ Description:
 
 - pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
 =======
-- paa(T:list, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point. 
+- paa(T:list, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point.
 
-- pdtw(T1: list, T2: list, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function. 
+- pdtw(T1: list, T2: list, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
 
-- lcssDist(T1: list, T2: list): Use longest common subsequence algorithm to calculate distance and path between two trajectories T1 and T2. The distance is inversely proportional to the similarity of two trajectories. 
+- lcssDist(T1: list, T2: list): Use longest common subsequence algorithm to calculate distance and path between two trajectories T1 and T2. The distance is inversely proportional to the similarity of two trajectories.
 
 Usage:
 - from Part4 import * (then you can use paa, pdtw and lcssDist in Part4.py)
