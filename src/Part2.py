@@ -62,14 +62,14 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
   #traj_list = traj_set.tolist(traj_set)
   traj_list_size = len(traj_list)
 
-  h_average_traj = np.zeros((h, 2))
+  h_average_traj = np.zeros((h+1, 2))
 
-  for i in range(h):   
+  for i in range(h+1):   
     curr_x_added = 0
     curr_y_added = 0
     for j in range(traj_list_size):
       arc_length = get_arc_length(traj_list[j])
-      curr_x = (i+1) / h
+      curr_x = (i+1) / (h+1)
       curr_remaining_arc_length = curr_x * arc_length
       #curr_remaining_arc_length = curr_x
       #print("arc_lenth", curr_x, curr_remaining_arc_length)
