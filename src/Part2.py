@@ -64,7 +64,7 @@ def n_average_trajectories(traj_list: list, h:int) -> "trajectories":
 
   h_average_traj = np.zeros((h, 2))
 
-  for i in range(h):   
+  for i in range(h+1):   
     curr_x_added = 0
     curr_y_added = 0
     for j in range(traj_list_size):
