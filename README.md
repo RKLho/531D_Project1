@@ -43,9 +43,9 @@ Description:
 - n_average_trajectories(traj_list: list, h:int) takes list/ndarray as the list contains trajectories and an int as the average degree, return the averaged trajectory from the   list of trajectories. Shapes and details can be found in the comments
 
 Usage:
-- PartTwo.py includes just all the three functions
+- Part2.py includes just all the three functions
 
-- PartTwoDemo.py/PartTwoDemoNotebook.ipynb includes all the three functions and some of my demo/test codes to display and verify. It can be used as an illustration on how these   functions work. Recommend open PartTwoDemoNotebook.ipynb on google colab if what to test out.
+- Part2Demo.py/Part2DemoNotebook.ipynb includes all the three functions and some of my demo/test codes to display and verify. It can be used as an illustration on how these   functions work. Recommend open Part2DemoNotebook.ipynb on google colab if what to test out.
 
 ### Part 3:
 
@@ -55,7 +55,7 @@ Description:
 - paa(T, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point.
 
 - pdtw(T1, T2, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
-=======
+
 - paa(T:list, c): PAA cuts a trajectory T of size n into N = n/c pieces. For each piece i, it computes the average point Pi as representative point.
 
 - pdtw(T1: list, T2: list, c): Aggregate trajectory with ```paa``` function. Compute the distance and path with ```dtw``` function.
