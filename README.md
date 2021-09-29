@@ -49,6 +49,28 @@ Usage:
 
 ### Part 3:
 
+Description:
+
+* find_mincluster(all_traj_list, center_func, dist_func, k, r, tmax,h=0) takes in the list of all trajectories, a function to calculate the center trajectory, a function to calculate distances between two trajectories, the number of clusters, the number of rounds, the maximum times of re-assignment, the chosen h to calculate the center trajectory.
+
+  It returns the minimum cost of partitions, and the partition whose cost is minimum.
+
+* calcu_cost(partition,center_func, dist_func,k,h)takes in a partition, a function to calculate the center trajectory, a function to calculate the distance between two trajectories, the number of clusters, and the chosen h.
+
+  It returns the cost of the partition.
+
+* plot_cluster(partition,k,r)takes in a partition, the number of clusters, and the number of rounds
+
+  It plots and saves figures of k-clusters
+
+* get_partition(all_traj_list,k)takes in a list of trajectories and the number of clusters, and returns the randomly partitioned k-clusters
+
+* get_alltrajlist(input_set)takes in a [N,4] ndarray which contains all trajectories, and returns a list consists of all trajectories(m,n,4), m is the number of trajectories, n is the number of points in each trajectory
+
+Usage:
+
+- Part3.py includes all functions, from Part3 import * (then you can use functions in Part3.py)
+
 ### Part 4:
 
 Description:
